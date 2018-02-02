@@ -29,7 +29,7 @@
                         <a href="/articles" class="navbar-item {{ $page == 'articles' ? 'is-active': '' }}">
                             Articles
                         </a>
-                        <a class="navbar-item {{ $page == 'contacts' ? 'is-active': '' }}">
+                        <a href="/contacts" class="navbar-item {{ $page == 'contacts' ? 'is-active': '' }}">
                             Contacts
                         </a>
                     </div>
