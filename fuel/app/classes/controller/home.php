@@ -20,11 +20,13 @@ class Home extends \Fuelblade\Controller\Blade
             ->limit(10)
             ->get();
 
+        $data['page'] = 'home';
         return $this->view('home/index', $data);
     }
 
     public function action_404()
     {
+        $data['page'] = 'home';
         $this->template->content = \View::forge('home/404', array());
     }
 
@@ -49,7 +51,9 @@ class Home extends \Fuelblade\Controller\Blade
             }
         }
 
-        return $this->view('home/login');
+        $data = array();
+        $data['page'] = 'home';
+        return $this->view('home/login', $data);
     }
 
     public function action_logout()

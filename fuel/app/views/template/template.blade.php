@@ -23,16 +23,13 @@
                 </div>
                 <div id="navbarMenuHeroA" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item is-active">
+                        <a href="/" class="navbar-item {{ $page == 'home' ? 'is-active': '' }}">
                             Accueil
                         </a>
-                        <a class="navbar-item">
+                        <a href="/articles" class="navbar-item {{ $page == 'articles' ? 'is-active': '' }}">
                             Articles
                         </a>
-                        <a class="navbar-item">
-                            Blog
-                        </a>
-                        <a class="navbar-item">
+                        <a class="navbar-item {{ $page == 'contacts' ? 'is-active': '' }}">
                             Contacts
                         </a>
                     </div>

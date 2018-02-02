@@ -63,4 +63,8 @@
         </div>
     @endforeach
 
+    <div class="has-text-centered">
+        <a href="/articles" class="button is-link is-outlined">Voir plus d'articles</a>
+    </div>
+
 @endsection
