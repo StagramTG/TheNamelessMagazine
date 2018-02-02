@@ -11,8 +11,12 @@ class Articles extends \Fuelblade\Controller\Blade
 {
     public function action_index()
     {
-        $page = \Input::get('page');
+        $article_by_page = 10;
+
+        $page = intval(\Input::get('page'));
         $data = array();
+        $data['page_index'] = 0;
+        $data['page_count'] = ceil(\Model\Article::count() / $article_by_page) - 1;
 
         if($page != null)
         {
@@ -21,9 +25,11 @@ class Articles extends \Fuelblade\Controller\Blade
                 ->related('categories')
                 ->order_by('created_at', 'desc')
                 ->where('draft', '=', 0)
-                ->offset($page * 10)
-                ->limit(10)
+                ->offset($page * $article_by_page)
+                ->limit($article_by_page)
                 ->get();
+
+            $data['page_index'] = $page;
         }
         else
         {
@@ -32,7 +38,7 @@ class Articles extends \Fuelblade\Controller\Blade
                 ->related('categories')
                 ->order_by('created_at', 'desc')
                 ->where('draft', '=', 0)
-                ->limit(10)
+                ->limit($article_by_page)
                 ->get();
         }
 

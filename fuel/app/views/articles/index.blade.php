@@ -31,4 +31,13 @@
             </article>
         </div>
     @endforeach
+
+    {{-- Pagination --}}
+    <nav class="pagination is-right" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" href="{{ $page_index >= 1 ? '/articles?page='.($page_index - 1): '#' }}" {{ $page_index < 1 ? 'disabled': '' }}>Page précédente</a>
+        <a class="pagination-next" href="{{ $page_index < $page_count ? '/articles?page='.($page_index + 1): '#' }}" {{ $page_index >= $page_count ? 'disabled': '' }}>Page suivante</a>
+        <ul class="pagination-list">
+            <span class="tag is-light is-large">page {{ $page_index + 1 }}/{{ $page_count + 1 }}</span>
+        </ul>
+    </nav>
 @endsection
