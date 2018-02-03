@@ -1,10 +1,4 @@
 <?php
-/**
- * User: Thomas Gredin
- * Date: 03/02/2018
- * Time: 17:36
- */
-
-return array(
-    'contact_page_content' => ""
+return array (
+  'contact_page_content' => '<p>Je suis le contenu perso de la page de contact de The Nameless Magazine !</p>',
 );

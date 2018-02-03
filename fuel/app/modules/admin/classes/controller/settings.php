@@ -11,19 +11,21 @@ class Settings extends Admin
 {
     public function action_index()
     {
+        \Config::load('globalsettings', true);
         $data = array();
 
         $data['page'] = 'settings';
+        $data['contact_page_content'] = \Config::get('globalsettings.contact_page_content');
         return $this->view('admin/settings/index', $data);
     }
 
-    public function post_updateContactPage()
+    public function post_updateContactsPage()
     {
         $content = \Input::post('content');
 
-        \Config::load('globalsettings');
+        \Config::load('globalsettings', true);
         \Config::set('globalsettings.contact_page_content', $content);
-        \Config::save('globalsettings');
+        \Config::save('globalsettings', 'globalsettings');
         \Response::redirect('/admin/settings');
     }
 }
