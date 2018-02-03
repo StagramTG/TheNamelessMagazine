@@ -18,30 +18,23 @@ class Users extends Admin
         return $this->view('admin/users/index', $data);
     }
 
-    public function action_edit()
+    public function action_create()
     {
         $data = array();
 
         if(\Input::method() == 'POST')
         {
-            if(\Input::post('id', false))
-            {
-                // Update
-            }
-            else
-            {
-                // Create
-            }
-        }
-        else if(\Input::method() == 'GET')
-        {
-            if(\Input::get('id', false))
-            {
-                // display existing
-            }
+            // Create
+            $new_user = \Auth::create_user(
+                \Input::post('username'),
+                \Input::post('password'),
+                \Input::post('email')
+            );
+
+            \Response::redirect('/admin/users');
         }
 
         $data['page'] = 'users';
-        return $this->view('admin/users/edit', $data);
+        return $this->view('admin/users/create', $data);
     }
 }

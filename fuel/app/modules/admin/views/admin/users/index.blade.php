@@ -7,7 +7,7 @@
             <p class="subtitle">Gestion des utilisateurs</p>
         </div>
         <div class="column has-text-right">
-            <a href="/admin/users/edit" class="button is-link is-outlined">Ajouter un utilisateur</a>
+            <a href="/admin/users/create" class="button is-link is-outlined">Ajouter un utilisateur</a>
         </div>
     </div>
 
@@ -17,7 +17,7 @@
         <tr>
             <th>Nom</th>
             <th>Adresse mail</th>
-            <th colspan="2">Actions</th>
+            <th></th>
         </tr>
         </thead>
 
@@ -26,7 +26,6 @@
             <tr>
                 <td>{{ $user->username }}</td>
                 <td>{{ $user->email }}</td>
-                <td><a href="/admin/users/edit?id={{ $user->id }}">modifier</a></td>
                 <td><a href="#">supprimer</a></td>
             </tr>
         @endforeach

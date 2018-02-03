@@ -2,9 +2,9 @@
 
 @section('content')
     <h1 class="title">Utilisateurs</h1>
-    <p class="subtitle">Edition d'un utilisateur</p>
+    <p class="subtitle">Création d'un nouvel utilisateur</p>
 
-    <form action="/admin/users/edit" method="POST">
+    <form action="/admin/users/create" method="POST">
 
         <div class="field">
             <p class="control">
@@ -29,7 +29,7 @@
 
         <div class="field">
             <p class="control">
-                <button class="button is-link is-outlined">Enregistrer</button>
+                <button class="button is-link is-outlined">Créer</button>
             </p>
         </div>
 
