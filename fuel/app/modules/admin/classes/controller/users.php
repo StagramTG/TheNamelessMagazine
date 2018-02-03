@@ -11,7 +11,10 @@ class Users extends Admin
 {
     public function action_index()
     {
-        $this->template->page = 'users';
-        $this->template->content = \View::forge('users/index');
+        $data = array();
+        $data['users'] = \Auth\Model\Auth_User::query()->get();
+
+        $data['page'] = 'users';
+        return $this->view('admin/users/index', $data);
     }
 }
