@@ -7,6 +7,6 @@
 
 return array(
     'views_path' => array(
-        APPPATH.'views',
+        APPPATH.'modules/admin/views'
     )
 );

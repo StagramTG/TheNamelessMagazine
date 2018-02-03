@@ -1,4 +1,4 @@
-@extends('../default/template')
+@extends('admin/default/template')
 
 @section('stylesheets')
     {!! Asset::css('quill/quill.snow.min.css') !!}

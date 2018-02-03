@@ -37,9 +37,6 @@
                 <a href="/admin/articles" class="panel-block {{ ($page == 'articles' ? 'is-active': '') }}">
                     Articles
                 </a>
-                <a href="/admin/blogs" class="panel-block {{ ($page == 'blogs' ? 'is-active': '') }}">
-                    Blogs
-                </a>
                 <a href="/admin/users" class="panel-block {{ ($page == 'users' ? 'is-active': '') }}">
                     Utilisateurs
                 </a>

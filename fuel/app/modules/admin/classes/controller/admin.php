@@ -23,7 +23,7 @@ class Admin extends \Fuelblade\Controller\Blade
         $data = array();
         $data['page'] = 'dashboard';
 
-        return $this->view('index', $data);
+        return $this->view('admin/index', $data);
     }
 
     public function action_registerUser()
@@ -49,6 +49,6 @@ class Admin extends \Fuelblade\Controller\Blade
         }
 
         $this->template->page = 'user.register';
-        $this->template->content = \View::forge('register');
+        $this->template->content = \View::forge('admin/register');
     }
 }

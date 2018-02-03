@@ -15,7 +15,7 @@ class Articles extends Admin
         $data['page'] = 'articles';
         $data['articles'] = \Model\Article::query()->order_by('created_at', 'desc')->get();
 
-        return $this->view('articles/index', $data);
+        return $this->view('admin/articles/index', $data);
     }
 
     public function action_edit()
@@ -66,7 +66,7 @@ class Articles extends Admin
         $data['categories'] = \Model\Category::find('all');
         $data['article'] = $article;
 
-        return $this->view('articles/edit', $data);
+        return $this->view('admin/articles/edit', $data);
     }
 
     public function post_delete()

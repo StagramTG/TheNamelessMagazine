@@ -16,7 +16,7 @@ class Categories extends Admin
         $data['categories'] = $categories;
         $data['page'] = 'categories';
 
-        return $this->view('categories/index', $data);
+        return $this->view('admin/categories/index', $data);
     }
 
     public function action_edit()
@@ -75,7 +75,7 @@ class Categories extends Admin
         $data['category'] = $category;
         $data['page'] = 'categories';
 
-        return $this->view('categories/edit', $data);
+        return $this->view('admin/categories/edit', $data);
     }
 
     public function post_delete()
