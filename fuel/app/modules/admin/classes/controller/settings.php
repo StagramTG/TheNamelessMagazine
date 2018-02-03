@@ -11,7 +11,19 @@ class Settings extends Admin
 {
     public function action_index()
     {
-        $this->template->page = 'settings';
-        $this->template->content = \View::forge('settings/index');
+        $data = array();
+
+        $data['page'] = 'settings';
+        return $this->view('admin/settings/index', $data);
+    }
+
+    public function post_updateContactPage()
+    {
+        $content = \Input::post('content');
+
+        \Config::load('globalsettings');
+        \Config::set('globalsettings.contact_page_content', $content);
+        \Config::save('globalsettings');
+        \Response::redirect('/admin/settings');
     }
 }
