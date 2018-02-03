@@ -1,4 +1,4 @@
 <?php
 return array (
-  'contact_page_content' => '<p>Je suis le contenu perso de la page de contact de The Nameless Magazine !</p>',
+  'contact_page_content' => '<h1>Vous souhaitez nous contacter ?</h1><p>Vous voulez nous donner votre avis, émettre une critique ou tout simplement nous dire un mot doux ? Pour cela une seul adresse ...</p>',
 );

@@ -65,11 +65,12 @@
                     <a href="bulma.io">Bulma</a>
                 </p>
             </div>
-            <div class="column">
-
+            <div class="column has-text-centered-desktop">
+                Le contenu des articles appartient à ces auteurs, si vous l'utilisez ailleurs merci
+                de le créditer.
             </div>
-            <div class="column">
-                <a href="/admin">Administration</a>
+            <div class="column has-text-right-desktop">
+                <a href="/admin">Espace rédacteur</a>
             </div>
         </div>
     </div>
