@@ -17,4 +17,31 @@ class Users extends Admin
         $data['page'] = 'users';
         return $this->view('admin/users/index', $data);
     }
+
+    public function action_edit()
+    {
+        $data = array();
+
+        if(\Input::method() == 'POST')
+        {
+            if(\Input::post('id', false))
+            {
+                // Update
+            }
+            else
+            {
+                // Create
+            }
+        }
+        else if(\Input::method() == 'GET')
+        {
+            if(\Input::get('id', false))
+            {
+                // display existing
+            }
+        }
+
+        $data['page'] = 'users';
+        return $this->view('admin/users/edit', $data);
+    }
 }
