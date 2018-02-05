@@ -35,7 +35,7 @@
 
                     <div class="level-right">
                         <div class="level-item">
-                            <a href="#" class="button is-link">Espace perso</a>
+                            <a href="/admin/account" class="button is-link">Espace perso</a>
                         </div>
                     </div>
                 </div>

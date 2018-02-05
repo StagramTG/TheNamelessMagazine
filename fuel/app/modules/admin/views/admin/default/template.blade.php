@@ -5,6 +5,7 @@
     <title>Admin | The Nameless Magazine</title>
 
     {!! Asset::css('bulma.css') !!}
+    {!! Asset::css('ionicons.min.css') !!}
 
     @yield('stylesheets')
 </head>
@@ -15,7 +16,9 @@
             <a href="/" class="navbar-item">TNM</a>
         </div>
         <div class="navbar-menu navbar-end">
-            <a href="/admin/account" class="navbar-item">{{ Auth::get('username') }}</a>
+            <a href="/admin/account" class="navbar-item">
+                <span class="icon"><i class="icon ion-person"></i></span>{{ Auth::get('username') }}
+            </a>
             <a href="/logout" class="navbar-item">Déconnexion</a>
         </div>
     </div>
