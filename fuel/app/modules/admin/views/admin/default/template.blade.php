@@ -15,6 +15,7 @@
             <a href="/" class="navbar-item">TNM</a>
         </div>
         <div class="navbar-menu navbar-end">
+            <a href="/admin/account" class="navbar-item">{{ Auth::get('username') }}</a>
             <a href="/logout" class="navbar-item">Déconnexion</a>
         </div>
     </div>

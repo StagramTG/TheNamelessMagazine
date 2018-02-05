@@ -1,4 +1,4 @@
-@extends('admin/template/template')
+@extends('admin/default/template')
 
 @section('content')
     Account
