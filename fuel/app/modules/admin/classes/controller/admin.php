@@ -22,6 +22,10 @@ class Admin extends \Fuelblade\Controller\Blade
     {
         $data = array();
         $data['page'] = 'dashboard';
+        $data['articles'] = \Model\Article::query()
+            ->order_by('created_at', 'desc')
+            ->limit(5)
+            ->get();
 
         return $this->view('admin/index', $data);
     }
