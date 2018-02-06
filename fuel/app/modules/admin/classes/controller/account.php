@@ -25,7 +25,41 @@ class Account extends Admin
     {
         $data = array();
         $data['page'] = 'account';
+        $data['tab'] = 'general';
 
-        return $this->view('admin/account/user', $data);
+        return $this->view('admin/account/user/general', $data);
+    }
+
+    public function action_useremail()
+    {
+        $data = array();
+        $data['page'] = 'account';
+        $data['tab'] = 'email';
+
+        return $this->view('admin/account/user/email', $data);
+    }
+
+    public function action_userpassword()
+    {
+        $data = array();
+        $data['page'] = 'account';
+        $data['tab'] = 'password';
+
+        return $this->view('admin/account/user/password', $data);
+    }
+
+    public function post_updateUser()
+    {
+        if(\Input::post('newpassword'))
+        {
+            // Update password
+        }
+
+        if(\Input::post('email'))
+        {
+            // Update email
+        }
+
+        \Response::redirect('/admin/account/user');
     }
 }
