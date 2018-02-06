@@ -7,7 +7,7 @@
             <p class="subtitle">Gestion des paramètres du compte</p>
         </div>
         <div class="column has-text-right">
-            <a href="#" class="button is-link">Modifier les informations du compte</a>
+            <a href="/admin/account/user" class="button is-link">Modifier les informations du compte</a>
         </div>
     </div>
 

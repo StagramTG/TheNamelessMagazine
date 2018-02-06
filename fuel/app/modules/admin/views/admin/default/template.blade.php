@@ -16,9 +16,16 @@
             <a href="/" class="navbar-item">TNM</a>
         </div>
         <div class="navbar-menu navbar-end">
-            <a href="/admin/account" class="navbar-item">
-                <span class="icon"><i class="icon ion-person"></i></span>{{ Auth::get('username') }}
-            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a href="/admin/account" class="navbar-link">
+                    <span class="icon"><i class="icon ion-person"></i></span>{{ Auth::get('username') }}
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a href="/admin/account" class="navbar-item">Tableau de bord perso</a>
+                    <a href="/admin/account/user" class="navbar-item">Paramètres du compte</a>
+                </div>
+            </div>
             <a href="/logout" class="navbar-item">Déconnexion</a>
         </div>
     </div>
