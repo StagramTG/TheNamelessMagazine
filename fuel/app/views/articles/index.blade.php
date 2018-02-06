@@ -24,7 +24,7 @@
                         </div>
 
                         <div>
-                            <a href="#" class="button is-link is-outlined">Lire l'article</a>
+                            <a href="/articles/read?id={{ $article->id }}" class="button is-link is-outlined">Lire l'article</a>
                         </div>
                     </div>
                 </div>

@@ -45,4 +45,13 @@ class Articles extends \Fuelblade\Controller\Blade
         $data['page'] = 'articles';
         return $this->view('articles/index', $data);
     }
+
+    public function action_read()
+    {
+        $data = array();
+        $data['page'] = 'articles';
+        $data['article'] = \Model\Article::find(\Input::get('id'));
+
+        return $this->view('articles/read', $data);
+    }
 }
