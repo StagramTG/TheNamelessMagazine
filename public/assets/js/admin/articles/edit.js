@@ -12,6 +12,7 @@ var quill = new Quill('#editor', {
             [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
 
             [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+            ['image', 'video'],
 
             ['clean']                                         // remove formatting button
         ]
