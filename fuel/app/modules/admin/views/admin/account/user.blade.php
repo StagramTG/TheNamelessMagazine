@@ -3,18 +3,6 @@
 @section('content')
     <h1 class="title">Informations du compte</h1>
 
-    @if(Session::get_flash('update_success', false, true))
-        <div class="notification is-success">
-            Compte mit à jour avec succès !
-        </div>
-    @endif
-
-    @if(Session::get_flash('update_fail', false, true))
-        <div class="notification is-danger">
-            Erreur lors de la mise à jour du compte...
-        </div>
-    @endif
-
     {{-- Navigation --}}
     <div class="tabs is-boxed">
         <ul>

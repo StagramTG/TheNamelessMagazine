@@ -53,11 +53,36 @@ class Account extends Admin
         if(\Input::post('newpassword'))
         {
             // Update password
+            $success = true;
+            try
+            {
+                $success = \Auth::update_user(array(
+                    'old_password' => \Input::post('oldpassword'),
+                    'password' => \Input::post('newpassword')
+                ));
+
+                if ($success) \Session::set_flash('update_success', true);
+                else \Session::set_flash('update_fail', true);
+            }
+            catch (\Exception $e)
+            {
+                \Session::set_flash('update_fail', true);
+            }
+
+            \Response::redirect('/admin/account/userpassword');
         }
 
         if(\Input::post('email'))
         {
             // Update email
+            $success = \Auth::update_user(array(
+                'email' => \Input::post('email')
+            ));
+
+            if ($success) \Session::set_flash('update_success', true);
+            else \Session::set_flash('update_fail', true);
+
+            \Response::redirect('/admin/account/useremail');
         }
 
         \Response::redirect('/admin/account/user');
