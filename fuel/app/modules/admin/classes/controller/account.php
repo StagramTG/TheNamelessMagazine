@@ -20,4 +20,12 @@ class Account extends Admin
 
         return $this->view('admin/account/index', $data);
     }
+
+    public function action_user()
+    {
+        $data = array();
+        $data['page'] = 'account';
+
+        return $this->view('admin/account/user', $data);
+    }
 }
