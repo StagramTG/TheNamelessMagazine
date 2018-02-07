@@ -1,9 +1,5 @@
 @extends('admin/default/template')
 
-@section('stylesheets')
-    {!! Asset::css('quill/quill.snow.min.css') !!}
-@endsection
-
 @section('content')
     <h1 class="title">Paramètres</h1>
     <p class="subtitle">Paramètres généraux de l'application</p>
@@ -19,45 +15,34 @@
             </a>
         </div>
     </div>
-    <div id="contacts-editor">{!! $contact_page_content !!}</div>
     
     {{-- hidden form to update contacts page --}}
     <form action="/admin/settings/updatecontactspage" method="POST" id="contacts-form">
-        <textarea name="content" id="contacts-content" hidden></textarea>
+        <textarea name="content" id="contacts-content">
+            {!! $contact_page_content !!}
+        </textarea>
     </form>
 @endsection
 
 @section('scripts')
-    {!! Asset::js('quill/quill.min.js') !!}
+    {!! Asset::js('tinymce/tinymce.min.js') !!}
 
     <script>
-        var quill = new Quill('#contacts-editor', {
-            theme: 'snow',
-            modules: {
-                toolbar: [
-                    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-                    [{ 'align': [] }],
-                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                    ['blockquote', 'code-block'],
-
-                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-                    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-
-                    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-
-                    ['clean']                                         // remove formatting button
-                ]
-            }
+        tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor textcolor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code help wordcount'
+            ],
+            toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | fullscreen',
         });
 
         function updateContact()
         {
-            var form = document.getElementById('contacts-form');
-            var textarea = document.getElementById('contacts-content');
-
-            textarea.textContent = quill.container.firstChild.innerHTML;
-            form.submit();
+            document.getElementById('contacts-form').submit();
         }
     </script>
 @endsection
