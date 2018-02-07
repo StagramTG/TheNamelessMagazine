@@ -1,9 +1,5 @@
 @extends('admin/default/template')
 
-@section('stylesheets')
-    {!! Asset::css('quill/quill.snow.min.css') !!}
-@endsection
-
 @section('content')
     <div class="columns">
         <div class="column">
@@ -66,12 +62,9 @@
 
         <div class="field">
             <p class="control">
-                <textarea name="content" id="content" hidden>
-                </textarea>
-
-                <div id="editor" style="height: 75vh;">
+                <textarea name="content" id="content">
                     {!! $article != null ? $article->content: "" !!}
-                </div>
+                </textarea>
             </p>
         </div>
 
@@ -84,6 +77,6 @@
 @endsection
 
 @section('scripts')
-    {!! Asset::js('quill/quill.min.js') !!}
+    {!! Asset::js('tinymce/tinymce.min.js') !!}
     {!! Asset::js('admin/articles/edit.js') !!}
 @endsection
