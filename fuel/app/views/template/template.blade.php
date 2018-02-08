@@ -6,6 +6,7 @@
     <title>The Nameless Magazine</title>
 
     {!! Asset::css('bulma.css') !!}
+    {!! Asset::css('bulmafix.css') !!}
     @yield('stylesheets')
 </head>
 <body>
@@ -26,9 +27,17 @@
                         <a href="/" class="navbar-item {{ $page == 'home' ? 'is-active': '' }}">
                             Accueil
                         </a>
-                        <a href="/articles" class="navbar-item {{ $page == 'articles' ? 'is-active': '' }}">
-                            Articles
-                        </a>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="/articles" class="navbar-link {{ $page == 'articles' ? 'is-active': '' }}">
+                                Articles
+                            </a>
+
+                            <div class="navbar-dropdown">
+                                @foreach(\Model\Category::find('all') as $i => $category)
+                                    <a href="/articles/category?id={{ $category->id }}" class="navbar-item">{{ $category->name }}</a>
+                                @endforeach
+                            </div>
+                        </div>
                         <a href="/contacts" class="navbar-item {{ $page == 'contacts' ? 'is-active': '' }}">
                             Contacts
                         </a>
