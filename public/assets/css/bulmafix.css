@@ -8,6 +8,11 @@
     color: rgb(245, 245, 245);
 }
 
+.hero.is-dark .navbar-item.has-dropdown a.navbar-link:after
+{
+    border-color: rgb(245, 245, 245);
+}
+
 .hero.is-dark .navbar-item.has-dropdown:hover a.navbar-link
 {
     color: rgb(245, 245, 245);
