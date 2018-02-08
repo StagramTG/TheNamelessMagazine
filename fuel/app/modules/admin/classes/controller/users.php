@@ -37,4 +37,17 @@ class Users extends Admin
         $data['page'] = 'users';
         return $this->view('admin/users/create', $data);
     }
+
+    public function post_delete()
+    {
+        $id = \Input::post('id');
+        $user = \Auth\Model\Auth_User::find($id);
+        if($user == null)
+        {
+
+        }
+
+        $user->delete();
+        \Response::redirect('/admin/users');
+    }
 }
