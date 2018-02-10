@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Nameless Magazine</title>
 
-    {!! Asset::css('bulma.css') !!}
+    {!! Asset::css('bulmacustom.css') !!}
     {!! Asset::css('bulmafix.css') !!}
     @yield('stylesheets')
 </head>
