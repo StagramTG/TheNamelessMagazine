@@ -6,7 +6,6 @@
     <title>The Nameless Magazine</title>
 
     {!! Asset::css('bulmacustom.css') !!}
-    {!! Asset::css('bulmafix.css') !!}
     @yield('stylesheets')
 </head>
 <body>

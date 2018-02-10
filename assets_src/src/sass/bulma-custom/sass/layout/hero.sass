@@ -153,3 +153,20 @@
   flex-grow: 1
   flex-shrink: 0
   padding: 3rem 1.5rem
+
+// Fix for navbar is-dark
+.hero.is-dark
+  .navbar-item.has-dropdown
+    a.navbar-link
+      color: rgb(245, 245, 245)
+      &:after
+        border-color: rgb(245, 245, 245)
+    &:hover
+      a.navbar-link
+        color: rgb(245, 245, 245)
+        background-color: #292929
+    .navbar-dropdown
+      color: #0a0a0a
+      .navbar-item:hover
+        color: #0a0a0a
+        background-color: whitesmoke

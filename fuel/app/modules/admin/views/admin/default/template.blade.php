@@ -5,7 +5,6 @@
     <title>Admin | The Nameless Magazine</title>
 
     {!! Asset::css('bulmacustom.css') !!}
-    {!! Asset::css('ionicons.min.css') !!}
 
     @yield('stylesheets')
 </head>
