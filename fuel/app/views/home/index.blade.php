@@ -7,10 +7,13 @@
 
         <div class="column is-4-desktop">
             <div class="card">
-                <div class="card-image">
+                <div class="card-image hover">
                     <figure class="image">
                         <img src="{{ $article->image }}">
                     </figure>
+                    <div class="card-item">
+                        {{ $article->categories->name }}
+                    </div>
                 </div>
                 <div class="card-content">
                     <div class="content">
@@ -19,14 +22,12 @@
                         <div>par {{ $article->users->username }}</div>
                         <div class="is-flex" style="justify-content: space-between;">
                             <span>{{ date('d/m/Y', $article->created_at) }}</span>
-                            <span class="tag is-light">{{ $article->categories->name }}</span>
-                        </div>
-                        <br>
-
-                        <div>
-                            <a href="/articles/read?id={{ $article->id }}" class="button is-link is-outlined" style="width: 100%;">Lire l'article</a>
                         </div>
                     </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="/articles/read?id={{ $article->id }}" class="card-footer-item" style="width: 100%;">Lire l'article</a>
                 </div>
             </div>
         </div>

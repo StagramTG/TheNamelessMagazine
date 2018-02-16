@@ -31,3 +31,6 @@ desktop.ini
 /fuel/app/logs/*/*/*
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
+
+# NPM packages
+/assets_src/node_modules/
