@@ -7,7 +7,7 @@
 
         <div class="column is-4-desktop">
             <div class="card">
-                <div class="card-image">
+                <div class="card-image hover">
                     <figure class="image">
                         <img src="{{ $article->image }}">
                     </figure>
