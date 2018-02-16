@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Admin | The Nameless Magazine</title>
 
-    {!! Asset::css('bulma.css') !!}
-    {!! Asset::css('ionicons.min.css') !!}
+    {!! Asset::css('bulmacustom.css') !!}
 
     @yield('stylesheets')
 </head>

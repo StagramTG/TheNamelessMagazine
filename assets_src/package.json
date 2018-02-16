@@ -4,11 +4,15 @@
   "description": "Assets for website The Nameless Magazine",
   "main": "main.js",
   "scripts": {
+    "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thomas Gredin",
   "license": "MIT",
   "dependencies": {
     "laravel-mix": "^2.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.3"
   }
 }
